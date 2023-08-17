@@ -7,6 +7,7 @@ public class IngredientScript : MonoBehaviour
     public string ingredientType;
 
     [SerializeField] private GameObject prefab;
+    [SerializeField] private Vector3 spawnPos;
 
     private bool checkingPickup;
 
@@ -19,13 +20,13 @@ public class IngredientScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (checkingPickup && 
+        /*if (checkingPickup && 
             (transform.Find("[RightHand Controller] Dynamic Attach") || transform.Find("[LeftHand Controller] Dynamic Attach")))
         {
             checkingPickup = false;
-            Debug.Log("spawning: " + ingredientType);
-            Invoke("SpawnIngredient", 1f);
-        }
+            //Debug.Log("spawning: " + ingredientType);
+            //Invoke("SpawnIngredient", 1f);
+        }*/
 
         
     }
@@ -33,6 +34,6 @@ public class IngredientScript : MonoBehaviour
     public void SpawnIngredient()
     {
         if (prefab != null)
-            Instantiate(prefab);
+            Instantiate(prefab, spawnPos, Quaternion.identity);
     }
 }

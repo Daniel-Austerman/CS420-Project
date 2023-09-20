@@ -35,13 +35,15 @@ public class RecipeTextController : MonoBehaviour
         switch (id)
         {
             case 0:
-                return "";
+                return "Toad";
             case 1:
-                return "Ingredient 1";
+                return "Leaves";
             case 2:
-                return "Ingredient 2";
+                return "Feather";
             case 3:
-                return "Ingredient 3";
+                return "Elixir";
+            case 4:
+                return "Flower";
             default:
                 return "ERROR";
         }

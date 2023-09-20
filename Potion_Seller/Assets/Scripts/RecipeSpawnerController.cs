@@ -40,19 +40,18 @@ public class RecipeSpawnerController : MonoBehaviour
         }
     }
 
-    public void removeCard(int id)
-    {
-        if (id < 0)
-        {
-            Debug.LogWarning("no potion made");
-            incorrectSFX.Play();
-            return;
-        }
-
+    public void removeCard(IngredientScript.IngredientType[] ingredients)
+    {    
+        Debug.Log("entered recipe: " + ingredients[0] + ", " + ingredients[1] + ", " + ingredients[2]);
+        
         for (int i = 0; i < parent.transform.childCount; i++)
         {
-            Debug.Log("checking recipe with id: " + parent.transform.GetChild(i).GetComponent<RecipeController>().recipeId);
-            if(parent.transform.GetChild(i).GetComponent<RecipeController>().recipeId == id)
+            Debug.Log("checking recipe: " + parent.transform.GetChild(i).GetComponent<RecipeController>().ingredients[0] + ", " 
+                                          + parent.transform.GetChild(i).GetComponent<RecipeController>().ingredients[1] + ", " 
+                                          + parent.transform.GetChild(i).GetComponent<RecipeController>().ingredients[2]);
+
+
+            if (CheckArrays(parent.transform.GetChild(i).GetComponent<RecipeController>().ingredients, ingredients))
             {
                 Debug.Log("deleting");
                 parent.transform.GetChild(i).GetComponent<RecipeController>().isComplete = true;
@@ -62,5 +61,17 @@ public class RecipeSpawnerController : MonoBehaviour
         }
 
         incorrectSFX.Play();
+    }
+
+    public bool CheckArrays(IngredientScript.IngredientType[] array1, IngredientScript.IngredientType[] array2)
+    {
+        for (int x = 0; x < 3; x++)
+        {
+            if (array1[x] != array2[x])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

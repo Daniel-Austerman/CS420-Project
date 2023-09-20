@@ -292,6 +292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fa0e6e6b96759488f5a78274ca62aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientType: flower
+  ingredient: 4
   prefab: {fileID: 8551876640620118441}
   spawnPos: {x: 1.4592, y: 0.9322, z: -0.6313}

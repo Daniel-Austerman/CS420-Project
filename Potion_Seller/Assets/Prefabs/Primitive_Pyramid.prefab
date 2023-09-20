@@ -261,6 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fa0e6e6b96759488f5a78274ca62aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientType: pyram
+  ingredient: 2
   prefab: {fileID: 7842619021544918924}
   spawnPos: {x: 1.817, y: 1, z: -0.569}

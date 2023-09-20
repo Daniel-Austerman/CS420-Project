@@ -1029,10 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3aa0cce36f49a44bbedc4a2fd873483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredients:
-  - 
-  - 
-  - 
+  ingredients: 000000000000000000000000
   player: {fileID: 1684692342}
   splashSoundEffect: {fileID: 659616987}
 --- !u!1 &705507993

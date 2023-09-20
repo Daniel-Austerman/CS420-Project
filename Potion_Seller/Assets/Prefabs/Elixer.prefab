@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fa0e6e6b96759488f5a78274ca62aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientType: elixer
+  ingredient: 3
   prefab: {fileID: 1098408642702917611}
   spawnPos: {x: 1.898, y: 0.969, z: -0.539}
 --- !u!1 &6935227590763242744

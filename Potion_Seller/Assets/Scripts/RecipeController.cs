@@ -15,7 +15,11 @@ public class RecipeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        float randomValue = Random.value * 10;
+        ingredient1Id = Mathf.FloorToInt(Random.value * 5);
+        ingredient2Id = Mathf.FloorToInt(Random.value * 5);
+        ingredient3Id = Mathf.FloorToInt(Random.value * 5);
+
+        /*float randomValue = Random.value * 10;
         if (randomValue < 1)
         {
             recipeId = 0;
@@ -79,7 +83,7 @@ public class RecipeController : MonoBehaviour
         } else
         {
             Debug.Log("ERROR IN RANDOM VALUE");
-        }
+        }*/
     }
 
     // Update is called once per frame

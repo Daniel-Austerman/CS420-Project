@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 291876819518090990}
   - component: {fileID: 291876819518090991}
   - component: {fileID: 291876819518090988}
-  - component: {fileID: 291876819518090989}
   - component: {fileID: 291876819518090770}
   - component: {fileID: 291876819518090771}
   - component: {fileID: 291876819518090985}
+  - component: {fileID: 2640684095026615565}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Ingredient
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 291876819518090768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 1, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291876819518090768}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 401207226385294854, guid: 4f29433ebd2f6ce49ab53fcd9f6c3943, type: 3}
 --- !u!23 &291876819518090988
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 03f289f67cffe494ba61c0972224fae3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &291876819518090989
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 291876819518090768}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &291876819518090770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -265,3 +251,16 @@ MonoBehaviour:
   ingredientType: cylin
   prefab: {fileID: 291876819518090768}
   spawnPos: {x: 1.817, y: 1, z: 0}
+--- !u!65 &2640684095026615565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291876819518090768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.044107713, y: 0.03969007, z: 0.04287614}
+  m_Center: {x: 0.0012878412, y: 0.009311127, z: 0.010420922}

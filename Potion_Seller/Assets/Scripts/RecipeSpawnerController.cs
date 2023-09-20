@@ -16,6 +16,9 @@ public class RecipeSpawnerController : MonoBehaviour
 
     [SerializeField] private GameObject parent;
 
+    [SerializeField] private AudioSource correctSFX;
+    [SerializeField] private AudioSource incorrectSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,7 @@ public class RecipeSpawnerController : MonoBehaviour
         if (id < 0)
         {
             Debug.LogWarning("no potion made");
+            incorrectSFX.Play();
             return;
         }
 
@@ -52,8 +56,11 @@ public class RecipeSpawnerController : MonoBehaviour
             {
                 Debug.Log("deleting");
                 parent.transform.GetChild(i).GetComponent<RecipeController>().isComplete = true;
-                break;
+                correctSFX.Play();
+                return;
             }
         }
+
+        incorrectSFX.Play();
     }
 }

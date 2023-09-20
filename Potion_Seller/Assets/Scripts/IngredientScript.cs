@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class IngredientScript : MonoBehaviour
 {
-    public string ingredientType;
+    public enum IngredientType
+    {
+        Frog,
+        Leaves,
+        Feather,
+        Elixer,
+        Flower
+    };
+
+    public IngredientType ingredient;
 
     [SerializeField] private GameObject prefab;
     [SerializeField] private Vector3 spawnPos;
@@ -15,20 +24,6 @@ public class IngredientScript : MonoBehaviour
     void Start()
     {
         checkingPickup = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /*if (checkingPickup && 
-            (transform.Find("[RightHand Controller] Dynamic Attach") || transform.Find("[LeftHand Controller] Dynamic Attach")))
-        {
-            checkingPickup = false;
-            //Debug.Log("spawning: " + ingredientType);
-            //Invoke("SpawnIngredient", 1f);
-        }*/
-
-        
     }
 
     public void SpawnIngredient()

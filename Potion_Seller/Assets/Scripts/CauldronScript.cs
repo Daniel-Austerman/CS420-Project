@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CauldronScript : MonoBehaviour
 {
-
-    public string[] ingredients = new string[3];
-    //public int[] ingredientCounts = new int[3];
-
+    public IngredientScript.IngredientType[] ingredients = new IngredientScript.IngredientType[3]; 
     private int listIndex;
 
     public GameObject player;
+
+    public AudioSource splashSoundEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +17,16 @@ public class CauldronScript : MonoBehaviour
         listIndex = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Ingredient")
         {
             if (listIndex < 3) {
-                ingredients[listIndex] = collision.gameObject.GetComponent<IngredientScript>().ingredientType;
+                ingredients[listIndex] = collision.gameObject.GetComponent<IngredientScript>().ingredient;
                 listIndex++;
             }
+
+            splashSoundEffect.Play();
 
             collision.GetComponent<IngredientScript>().SpawnIngredient();
             Debug.Log("destroying " + collision.name);
@@ -43,43 +38,43 @@ public class CauldronScript : MonoBehaviour
     {
         switch (ingredients[0])
         {
-            case "cube":
+            case IngredientScript.IngredientType.Frog:
                 switch (ingredients[1])
                 {
-                    case "cube":
+                    case IngredientScript.IngredientType.Frog:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 return 6;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 return 7;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 return 0;
                         }
                         break;
-                    case "cylin":
+                    case IngredientScript.IngredientType.Leaves:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 return 8;
                             default:
                                 return 1;
                         }
                         break;
-                    case "pyram":
+                    case IngredientScript.IngredientType.Feather:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 return 9;
                             default:
                                 return 3;
@@ -87,43 +82,43 @@ public class CauldronScript : MonoBehaviour
                         break;
                 }
                 break;
-            case "cylin":
+            case IngredientScript.IngredientType.Leaves:
                 switch (ingredients[1])
                 {
-                    case "cube":
+                    case IngredientScript.IngredientType.Frog:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 break;
                         }
                         break;
-                    case "cylin":
+                    case IngredientScript.IngredientType.Leaves:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 return 2;
                         }
                         break;
-                    case "pyram":
+                    case IngredientScript.IngredientType.Feather:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 return 4;
@@ -131,43 +126,43 @@ public class CauldronScript : MonoBehaviour
                         break;
                 }
                 break;
-            case "pyram":
+            case IngredientScript.IngredientType.Feather:
                 switch (ingredients[1])
                 {
-                    case "cube":
+                    case IngredientScript.IngredientType.Frog:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 break;
                         }
                         break;
-                    case "cylin":
+                    case IngredientScript.IngredientType.Leaves:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 break;
                         }
                         break;
-                    case "pyram":
+                    case IngredientScript.IngredientType.Feather:
                         switch (ingredients[2])
                         {
-                            case "cube":
+                            case IngredientScript.IngredientType.Frog:
                                 break;
-                            case "cylin":
+                            case IngredientScript.IngredientType.Leaves:
                                 break;
-                            case "pyram":
+                            case IngredientScript.IngredientType.Feather:
                                 break;
                             default:
                                 return 5;
@@ -182,7 +177,7 @@ public class CauldronScript : MonoBehaviour
     public void processPotion()
     {
         int potion = potionCompile();
-        ingredients = new string[3];
+        ingredients = new IngredientScript.IngredientType[3];
         listIndex = 0;
 
         Debug.Log("Made potion " + potion);
